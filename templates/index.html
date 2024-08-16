@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamMaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <header>
+        <h1>StreamMaster</h1>
+        <nav>
+            <!-- Optional navigation links -->
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro-text">
+            <p class="intro-text">
+                To get started, simply enter the link of the YouTube video, shorts, or playlist you'd like to download. Next, choose your preferred video quality from the dropdown menu. Once you've made your selections, click the "Download" button, and we'll take care of the rest. Enjoy your content offline, hassle-free.
+            </p>
+        </div>
+        
+        <div class="container">
+            <!-- <h2>Download YouTube Videos</h2> -->
+            <form id="downloadForm" method="POST" action="/download">
+                <label for="videoLink" aria-label="YouTube Video URL">YouTube Video URL</label>
+                <input type="url" id="videoLink" name="videoLink" placeholder="Enter YouTube video or Shorts link"
+                    required aria-required="true" />
+
+                <label for="videoQuality" aria-label="Select Video Quality">Video Quality</label>
+                <select id="videoQuality" name="videoQuality" required>
+                    <option value="best">Choose Quality</option>
+                    <option value="1080p">1080p</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                    <option value="360p">360p</option>
+                </select>
+
+                <button type="submit" id="downloadButton">Download</button>
+                <div id="statusMessage" role="alert" aria-live="assertive"></div>
+            </form>
+            <div id="progressContainer" style="display: none">
+                <p id="progressText"></p>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 StreamMaster. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
