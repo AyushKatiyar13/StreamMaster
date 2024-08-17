@@ -34,6 +34,7 @@ def download():
         format_code = quality_map.get(video_quality, 'best')
 
         ydl_opts = {
+            # 'proxy': 'http://49.228.131.169',  # Add your proxy here
             'format': format_code,
             'outtmpl': os.path.abspath(os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s')),
             'ffmpeg_location': r'C:\Users\Ankita\OneDrive\Desktop\New folder\ffmpeg-7.0.2-full_build\ffmpeg-7.0.2-full_build\bin',  # Set your ffmpeg path here
@@ -44,6 +45,7 @@ def download():
             video_title = result.get('title', 'video')  # Get video title
             video_ext = result.get('ext', 'mp4')  # Get video extension
             video_filename = f"{video_title}.{video_ext}"  # Full filename
+            ydl.download([video_link])
 
             # Print the file path for debugging
             video_filepath = os.path.join(DOWNLOAD_DIR, video_filename)
