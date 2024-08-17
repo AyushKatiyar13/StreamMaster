@@ -37,7 +37,7 @@ def download():
             # 'proxy': 'http://49.228.131.169',
             'format': format_code,
             'outtmpl': os.path.abspath(os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s')),
-            'ffmpeg_location': r'C:\Users\Ankita\OneDrive\Desktop\New folder\ffmpeg-7.0.2-full_build\ffmpeg-7.0.2-full_build\bin',  # Set your ffmpeg path here
+            'ffmpeg_location': r'C:\Program Files\ffmpeg-7.0.2-full_build\ffmpeg-7.0.2-full_build\bin',  # Set your ffmpeg path here
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:

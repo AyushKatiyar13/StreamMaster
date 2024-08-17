@@ -27,3 +27,15 @@ downloads/
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Node.js modules (if applicable)
+node_modules/
+
+# Python and Django specific files
+*.sqlite3
+*.db
+*.pyo
+
+# Vercel and Render configurations
+.vercel/
+.render/
