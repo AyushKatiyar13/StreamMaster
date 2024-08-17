@@ -4,10 +4,24 @@ from flask import Flask, render_template, request, send_file, redirect, url_for
 
 app = Flask(__name__)
 
+
+
+
+
+
 # Directory to temporarily store downloaded videos
-DOWNLOAD_DIR = "downloads"
-if not os.path.exists(DOWNLOAD_DIR):
-    os.makedirs(DOWNLOAD_DIR)
+# DOWNLOAD_DIR = "downloads"
+# if not os.path.exists(DOWNLOAD_DIR):
+#     os.makedirs(DOWNLOAD_DIR)
+
+DOWNLOAD_DIR = '/tmp/downloads'
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+
+
+
+
+
 
 @app.route('/')
 def index():
