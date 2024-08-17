@@ -4,24 +4,10 @@ from flask import Flask, render_template, request, send_file, redirect, url_for
 
 app = Flask(__name__)
 
-
-
-
-
-
-# Directory to temporarily store downloaded videos
-# DOWNLOAD_DIR = "downloads"
-# if not os.path.exists(DOWNLOAD_DIR):
-#     os.makedirs(DOWNLOAD_DIR)
-
-DOWNLOAD_DIR = '/tmp/downloads'
-os.makedirs(DOWNLOAD_DIR, exist_ok=True)
-
-
-
-
-
-
+Directory to temporarily store downloaded videos
+DOWNLOAD_DIR = "downloads"
+if not os.path.exists(DOWNLOAD_DIR):
+    os.makedirs(DOWNLOAD_DIR)
 
 @app.route('/')
 def index():
@@ -50,6 +36,7 @@ def download():
         ydl_opts = {
             # 'proxy': 'http://49.228.131.169',
             'format': format_code,
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'outtmpl': os.path.abspath(os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s')),
             'ffmpeg_location': r'C:\Users\Ankita\OneDrive\Desktop\New folder\ffmpeg-7.0.2-full_build\ffmpeg-7.0.2-full_build\bin',  # Set your ffmpeg path here
         }
