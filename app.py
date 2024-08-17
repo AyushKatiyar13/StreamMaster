@@ -36,7 +36,6 @@ def download():
         ydl_opts = {
             # 'proxy': 'http://49.228.131.169',
             'format': format_code,
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'outtmpl': os.path.abspath(os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s')),
             'ffmpeg_location': r'C:\Users\Ankita\OneDrive\Desktop\New folder\ffmpeg-7.0.2-full_build\ffmpeg-7.0.2-full_build\bin',  # Set your ffmpeg path here
         }
